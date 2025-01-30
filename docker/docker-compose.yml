@@ -1,0 +1,10 @@
+services:
+  locking-database:
+    image: postgres:11.16-alpine
+    ports:
+      - "5444:5432"
+    env_file: db-variables.env
+    volumes:
+      - db-volume:/var/lib/postgresql/locking
+volumes:
+  db-volume:
